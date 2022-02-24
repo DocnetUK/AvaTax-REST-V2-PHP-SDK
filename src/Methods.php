@@ -5187,7 +5187,7 @@ class AvaTaxClient extends AvaTaxClientBase
      * @param string $returnRegion A comma separated list of regions
      * @return FetchResult
      */
-    public function legacyFilingCalendars($companyId, $filter=null, $top=null, $skip=null, $orderBy=null, $returnCountry, $returnRegion)    {
+    public function legacyFilingCalendars($companyId, $filter=null, $top=null, $skip=null, $orderBy=null, $returnCountry=null, $returnRegion=null)    {
         $path = "/api/v2/companies/{$companyId}/filingcalendars/Legacy";
         $guzzleParams = [
             'query' => ['$filter' => $filter, '$top' => $top, '$skip' => $skip, '$orderBy' => $orderBy, 'returnCountry' => $returnCountry, 'returnRegion' => $returnRegion],
@@ -6124,7 +6124,7 @@ class AvaTaxClient extends AvaTaxClientBase
      * @param string $tagName Tag Name on the basis of which you want to filter Items
      * @return FetchResult
      */
-    public function listItemsByCompany($companyId, $filter=null, $include=null, $top=null, $skip=null, $orderBy=null, $tagName)    {
+    public function listItemsByCompany($companyId, $filter=null, $include=null, $top=null, $skip=null, $orderBy=null, $tagName=null)    {
         $path = "/api/v2/companies/{$companyId}/items";
         $guzzleParams = [
             'query' => ['$filter' => $filter, '$include' => $include, '$top' => $top, '$skip' => $skip, '$orderBy' => $orderBy, 'tagName' => $tagName],
